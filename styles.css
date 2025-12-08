@@ -33,13 +33,12 @@
     /* 1. Oculta e remove o espaço ocupado pelo <img> escuro */
     .Logo img {
         opacity: 0; 
-        height: 0; /* CRUCIAL: Força o elemento IMG a colapsar. */
         overflow: hidden;
     }
 
-    /* 2. Aplica a Logo Clara (JPG) como background no link. */
+   /* 2. Aplica a logo clara (JPG) como background no link. */
     .logo a {
-        display: block;
+        display: none;
         width: 150px; 
         height: 60px; 
         background-image: url('logo-clara.jpg'); 
@@ -652,3 +651,4 @@ main section {
     }
 
 }
+
