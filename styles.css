@@ -31,13 +31,13 @@
     
     /* === LOGO CLARA (Dark Mode) === */
     /* 1. Oculta e remove o espaço ocupado pelo <img> escuro */
-    .logo img {
+    .Logo img {
         opacity: 0; 
         height: 0; /* CRUCIAL: Força o elemento IMG a colapsar. */
         overflow: hidden;
     }
 
-    /* 2. Aplica a logo clara (JPG) como background no link. */
+    /* 2. Aplica a Logo Clara (JPG) como background no link. */
     .logo a {
         display: block;
         width: 150px; 
@@ -66,7 +66,7 @@
         color: var(--f-cimento); 
     }
 
-} /* <--- CHAVE DE FECHAMENTO CORRETA PARA O BLOCO DARK MODE */
+}
 
 
 /*
@@ -132,7 +132,7 @@ a:hover {
 }
 
 /* LOGO IMAGEM */
-.logo img {
+.Logo img {
     max-height: 60px; 
     width: auto;
 }
@@ -650,4 +650,5 @@ main section {
         display: block; 
         margin-bottom: 5px;
     }
+
 }
