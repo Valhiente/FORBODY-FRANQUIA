@@ -1,76 +1,25 @@
 /*
 |--------------------------------------------------------------------------
-| VARIAVEIS E RESET (PALETA: BRANCO, BORDÔ) - TEMA CLARO (DEFAULT)
+| VARIAVEIS E RESET (PALETA: BRANCO, BORDÔ)
 |--------------------------------------------------------------------------
 */
 :root {
-    --f-primary: #FFFFFF;      /* Fundo - Branco */
+    --f-primary: #FFFFFF;      /* Fundo/Elementos - Branco (Agora usado para texto no Header) */
     --f-secondary: #F0F0F0;    /* Elementos - Cinza Claro (para Boxes) */
     --f-highlight: #A5002A;    /* Ação/Destaque - Bordô Forte (Base) */
     --f-highlight-dark: #800020; /* Bordô Escuro (para hover) */
     --f-cimento: #555555;      /* Corpo de Texto - Cinza Escuro */
     --f-text: #121212;         /* Texto Principal - Preto Escuro */
     --f-spacing: 20px;
+    --f-header-bg: #4a0014; /* Fundo Bordô Escuro/Sólido para o Header */
 }
 
-/*
-|--------------------------------------------------------------------------
-| ESTILOS PARA TEMA ESCURO (DARK MODE)
-|--------------------------------------------------------------------------
-*/
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Cores do Tema Escuro */
-    --f-primary: #121212;         /* Fundo - Cinza Escuro */
-    --f-secondary: #262626;       /* Elementos - Cinza claro */
-    --f-highlight: #800020;       /* Ação/Destaque - Bordô Original */
-    --f-highlight-dark: #A5002A;  /* Bordô Ligeiramente mais claro (para hover) */
-    --f-cimento: #A1A1A1;         /* Corpo de Texto - cinza branco*/
-    --f-text: #F8F8F8;            /* Texto Principal - Branco */
-  }
-    
-    /* === LOGO CLARA (Dark Mode) === */
-    /* 1. Oculta e remove o espaço ocupado pelo <img> escuro */
-    .Logo img {
-        opacity: 0; 
-        overflow: hidden;
-    }
-
-   /* 2. Aplica a logo clara (JPG) como background no link. */
-    .logo a {
-        display: none;
-        width: 150px; 
-        height: 60px; 
-        background-image: url('logo-clara.jpg'); 
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    /* ======================================= */
-
-    /* Exceções de Fundo/Borda no Dark Mode que não usam variáveis */
-    #franquia-form {
-        background-color: #333; 
-        border: 1px solid #444;
-        box-shadow: none; 
-    }
-
-    /* Ajustes Dark Mode para FAQ */
-    .faq-section, .accordion-header {
-        background-color: var(--f-primary);
-    }
-    .accordion-header:hover, .accordion-content {
-        background-color: var(--f-secondary); 
-    }
-    .accordion-content p {
-        color: var(--f-cimento); 
-    }
-
-}
+/* O BLOCO DARK MODE FOI REMOVIDO */
 
 
 /*
 |--------------------------------------------------------------------------
-| ESTILOS GLOBAIS (APLICAM-SE A AMBOS OS MODOS)
+| ESTILOS GLOBAIS
 |--------------------------------------------------------------------------
 */
 
@@ -79,7 +28,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    /* Usa variáveis que mudam automaticamente com o modo */
     background-color: var(--f-primary); 
     color: var(--f-text);
     line-height: 1.6;
@@ -112,16 +60,17 @@ a:hover {
 
 /*
 |--------------------------------------------------------------------------
-| HEADER E NAV
+| HEADER E NAV (FUNDOS BORDÔ)
 |--------------------------------------------------------------------------
 */
 .site-header {
-    background-color: var(--f-primary); 
-    padding: 20px 0; 
+    /* Fundo da barra superior agora é Bordô Escuro/Sólido */
+    background-color: var(--f-header-bg); 
+    padding: 10px 0; 
     position: sticky; 
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
 }
 
 .site-header .container {
@@ -130,13 +79,11 @@ a:hover {
     align-items: center;
 }
 
-/* LOGO IMAGEM */
-.Logo img {
-    max-height: 60px; 
+/* LOGO IMAGEM (Tamanho Solicitado: 100px) */
+.logo img {
+    max-height: 100px; 
     width: auto;
-}
-.logo-text {
-    display: none; 
+    transition: opacity 0.3s;
 }
 
 .main-nav ul {
@@ -148,21 +95,40 @@ a:hover {
     align-items: center; 
 }
 
+/* Links do Menu - BRANCO */
 .main-nav a {
-    color: var(--f-text);
+    color: var(--f-primary); 
     font-weight: 500;
     text-transform: uppercase;
+    position: relative; /* Essencial para o underline animado */
+}
+
+/* Underline animado (Destaque ao passar o mouse) */
+.main-nav a::after {
+    content: '';
+    display: block;
+    width: 0; /* Começa com zero de largura */
+    height: 2px;
+    background: var(--f-primary); /* A linha será branca (igual ao texto) */
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+    transition: width 0.3s ease; /* Animação suave */
+}
+
+.main-nav a:hover::after {
+    width: 100%; /* A linha cresce para 100% no hover */
 }
 
 .main-nav a:hover {
-    color: var(--f-highlight);
+    color: var(--f-primary); /* Mantém o branco no hover */
 }
 
 .menu-toggle {
     display: none; 
     background: none;
     border: none;
-    color: var(--f-text);
+    color: var(--f-primary); /* Ícone do menu em Branco */
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -198,12 +164,13 @@ a:hover {
     box-shadow: 0 5px 15px rgba(165, 0, 42, 0.4); 
 }
 
-/* Botão Secundário / Menu */
+/* Botão Secundário / Menu "Fale Conosco" - Bordô Negrito */
 .btn-nav, .btn-secondary {
     background-color: transparent;
-    border: 2px solid var(--f-highlight); 
-    color: var(--f-highlight) !important;
+    border: 2px solid var(--f-highlight); /* Bordô Forte */
+    color: var(--f-highlight) !important; /* Bordô Forte */
     padding: 12px 25px;
+    font-weight: 700; /* Negrito Forte solicitado */
 }
 
 .btn-nav:hover, .btn-secondary:hover {
@@ -319,11 +286,11 @@ main section {
 
 /*
 |--------------------------------------------------------------------------
-| SEÇÃO DE DEPOIMENTOS (ADICIONADO)
+| SEÇÃO DE DEPOIMENTOS
 |--------------------------------------------------------------------------
 */
 .testimonial-section {
-    background-color: var(--f-secondary); /* Alternância de fundo */
+    background-color: var(--f-secondary); 
     text-align: center;
     padding: 80px 0;
 }
@@ -594,11 +561,18 @@ main section {
     .main-nav {
         display: none;
         position: absolute;
-        top: 60px; 
+        top: 120px; /* Ajustado para 100px de logo + padding */
         left: 0;
         width: 100%;
-        background-color: var(--f-secondary);
+        background-color: var(--f-primary); /* Fundo branco para mobile */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Links do menu em mobile precisam ser pretos no fundo branco */
+    .main-nav a {
+        color: var(--f-text);
+        display: block;
+        padding: 15px 0;
     }
 
     .main-nav.active {
@@ -612,22 +586,19 @@ main section {
 
     .main-nav li {
         text-align: center;
-        border-bottom: 1px solid #CCC;
+        border-bottom: 1px solid var(--f-secondary); 
     }
     
-    .main-nav a {
-        display: block;
-        padding: 15px 0;
-    }
-
     .menu-toggle {
         display: block;
     }
     
+    /* Garante que o botão Fale Conosco não suma no menu mobile */
     .btn-nav {
-        display: none;
+        display: inline-block !important; /* Força a exibição dentro do menu */
+        margin: 10px 0 20px 0; 
     }
-
+    
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -649,6 +620,4 @@ main section {
         display: block; 
         margin-bottom: 5px;
     }
-
 }
-
