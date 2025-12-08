@@ -1,8 +1,0 @@
-# 1. Força o uso de HTTPS em todas as versões HTTP
-http://* https://www.forbodyacademia.com.br/:splat 301
-
-# 2. Redireciona o domínio raiz (sem www) para o www, forçando HTTPS
-https://forbodyacademia.com.br/* https://www.forbodyacademia.com.br/:splat 301
-
-# 3. Redireciona o URL temporário do Netlify para o domínio principal
-https://forbodyacademia.netlify.app/* https://www.forbodyacademia.com.br/:splat 301
