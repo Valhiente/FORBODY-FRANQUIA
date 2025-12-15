@@ -12,11 +12,11 @@ O objetivo desta página é capturar leads de potenciais franqueados interessado
 | :--- | :--- |
 | **Status do Deploy** | **✅ PUBLICADO** |
 | **Domínio Principal** | `https://www.forbodyacademia.com.br` |
-| **Plataforma de Deploy** | Netlify |
+| **Plataforma de Deploy** | Github|
 
 ### 🔗 URL do Site
 
-O site está ativo e funcionando, configurado com HTTPS (certificado Let's Encrypt) e utilizando servidores DNS do Netlify (NSone).
+O site está ativo e funcionando, configurado com HTTPS (certificado Let's Encrypt) e utilizando servidores DNS do github.
 
 ---
 
@@ -44,13 +44,9 @@ O design utiliza uma paleta de cores focada em **Bordô/Vermelho Destaque** e **
 
 ---
 
-## ⚙️ Configuração de Deploy (Netlify)
+## 📂 Estrutura do Projeto
 
-O deploy contínuo é configurado a partir do branch `principal` do GitHub para a Netlify.
-
-* **Repositório Conectado:** `github.com/Valhiente/FORBODY-FRANQUIA`.
-* **Build Command:** (Vazio - não necessário para sites estáticos).
-* **Publish Directory:** (Vazio / `.` - configurado para publicar a partir da **raiz** do repositório, resolvendo problemas de caminho).
+O código principal do site está contido na pasta **`site forbody - completo`**.
 
 ---
 
