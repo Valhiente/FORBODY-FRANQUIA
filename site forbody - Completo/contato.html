@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contato FORBODY ACADEMIA | Dúvidas e Suporte</title>
+    <meta name="description" content="Entre em contato com o suporte da FORBODY ACADEMIA. Envie sua mensagem, tire dúvidas sobre planos, unidades ou envie sugestões.">
+    <link rel="canonical" href="https://www.forbodyacademia.com.br/contato"/> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <meta property="og:title" content="Fale Conosco - FORBODY ACADEMIA"/>
+    <meta property="og:url" content="https://www.forbodyacademia.com.br/contato"/> 
+    <meta property="og:image" content="favicon.png"/>
+
+    <link rel="icon" type="image/png" href="favicon.png"> 
+    <link rel="stylesheet" href="styles.css"> 
+
+</head>
+
+<body class="site-page">
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.jpg" alt="Logo FORBODY ACADEMIA">
+                </a>
+            </div>
+          <nav class="main-nav">
+    <ul>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="unidades.html">Unidades</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li>
+            <a href="plano.html">Planos 
+                <span class="plan-black-highlight">BLACK</span> 
+                e 
+                <span class="plan-red-highlight">RED</span>
+            </a>
+        </li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="franquia.html" class="btn-secondary">Franquia</a></li> 
+    </ul>
+</nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero-contato" class="hero-section" style="background-image: url('contato-bg.jpg'); background-size: cover; background-position: center;">
+            <div class="container">
+                <h1>Fale Conosco</h1>
+                <p>Tire suas dúvidas, envie sugestões ou peça informações sobre planos e horários.</p>
+                <a href="#form-contato" class="btn-primary">Ir para o Formulário</a>
+            </div>
+        </section>
+
+        <section id="form-contato" class="contact-section">
+            <div class="container">
+                <h2>Envie sua Mensagem</h2>
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/exyvrkkk" method="POST">
+                    <label for="nome_contato">Seu Nome:</label>
+                    <input type="text" id="nome_contato" name="Nome" required> 
+
+                    <label for="email_contato">Seu E-mail:</label>
+                    <input type="email" id="email_contato" name="Email" required>
+
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="Assunto" required>
+
+                    <label for="mensagem_contato">Mensagem:</label>
+                    <textarea id="mensagem_contato" name="Mensagem" required></textarea>
+
+                    <button type="submit" class="btn-primary">Enviar</button>
+                    <p id="form-message" class="hidden"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 FORBODY ACADEMIA. Todos os direitos reservados. | <a href="contato.html">Fale Conosco</a></p>
+            <p>Política de Privacidade | <a href="franquia.html" class="highlight-link">Seja um Franqueado</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

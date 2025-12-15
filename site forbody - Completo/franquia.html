@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Franquia FORBODY ACADEMIA | Invista em Fitness e Tecnologia</title>
+    <meta name="description" content="Seja um franqueado FORBODY ACADEMIA em Ribeirão Preto e região. Invista em fitness, tecnologia, modelo de negócio escalável e suporte 360º.">
+    <link rel="canonical" href="https://www.forbodyacademia.com.br/franquia"/> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <meta property="og:title" content="FORBODY ACADEMIA: Oportunidade de Franquia com Alto Retorno"/>
+    <meta property="og:description" content="Invista em uma rede de academias com foco em tecnologia e crescimento comprovado no interior de São Paulo."/>
+    <meta property="og:url" content="https://www.forbodyacademia.com.br/franquia"/> 
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="favicon.png"/> <meta property="og:locale" content="pt_BR"/>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+
+    <link rel="icon" type="image/png" href="favicon.png"> 
+    <link rel="stylesheet" href="styles.css"> 
+
+</head>
+
+<body class="site-page">
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.jpg" alt="Logo FORBODY ACADEMIA">
+                </a>
+            </div>
+            <nav class="main-nav">
+    <ul>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="unidades.html">Unidades</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li>
+            <a href="plano.html">Planos 
+                <span class="plan-black-highlight">BLACK</span> 
+                e 
+                <span class="plan-red-highlight">RED</span>
+            </a>
+        </li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="franquia.html" class="btn-secondary">Franquia</a></li> 
+    </ul>
+</nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero-franquia" class="hero-section" style="background-image: url('franquia-bg.jpg'); background-size: cover; background-position: center;">
+            <div class="container">
+                <h1>Seja um Franqueado FORBODY ACADEMIA</h1>
+                <p>Invista em um modelo de negócio testado, escalável e com foco em alta performance e tecnologia.</p>
+                <a href="#proposta" class="btn-primary">Enviar Proposta</a>
+            </div>
+        </section>
+
+        <section id="porque" class="about-section" style="background-color: var(--f-secondary);">
+            <div class="container">
+                <h2>Por que a FORBODY é Seu Melhor Investimento?</h2>
+                <div class="units-grid">
+                    
+                    <div class="unit-location">
+                        <h3>Suporte 360º</h3>
+                        <p>Assessoria completa na escolha do ponto, montagem, contratação e marketing digital da sua unidade.</p>
+                    </div>
+
+                    <div class="unit-location">
+                        <h3>Retorno Rápido</h3>
+                        <p>Modelo de gestão enxuto, alta rentabilidade e *payback* em tempo reduzido. Fale com nosso consultor.</p>
+                    </div>
+
+                    <div class="unit-location">
+                        <h3>Tecnologia EVO</h3>
+                        <p>Plataforma de gestão integrada para treinos, vendas, relatórios e relacionamento com o cliente. Diferencial de mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="proposta" class="contact-section">
+            <div class="container">
+                <h2>Envie sua Proposta</h2>
+                <p>Preencha o formulário abaixo para receber nossa Circular de Oferta de Franquia (COF) e agendar uma reunião.</p>
+                
+                <form id="franchise-form" class="franchise-form" action="https://formspree.io/f/xyzvploo" method="POST">
+                    <label for="nome">Seu Nome Completo:</label>
+                    <input type="text" id="nome" name="Nome" required> 
+
+                    <label for="email">Seu E-mail:</label>
+                    <input type="email" id="email" name="Email" required>
+
+                    <label for="telefone">Telefone para Contato (WhatsApp):</label>
+                    <input type="tel" id="telefone" name="Telefone" required>
+
+                    <label for="cidade">Cidade/Estado de Interesse:</label>
+                    <input type="text" id="cidade" name="Cidade/Estado" required>
+
+                    <label for="capital-investimento">Capital Disponível para Investimento (Estimativa):</label>
+                    <select id="capital-investimento" name="Capital Estimado" required>
+                        <option value="">Selecione...</option>
+                        <option value="ate-250k">Até R$ 250.000</option>
+                        <option value="250k-500k">R$ 250.000 a R$ 500.000</option>
+                        <option value="acima-500k">Acima de R$ 500.000</option>
+                    </select>
+
+                    <label for="mensagem">Mensagem/Dúvidas:</label>
+                    <textarea id="mensagem" name="Mensagem"></textarea>
+
+                    <button type="submit" class="btn-primary">Enviar Proposta de Franquia</button>
+                    <p id="form-message" class="hidden"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 FORBODY ACADEMIA. Todos os direitos reservados. | <a href="contato.html">Fale Conosco</a></p>
+            <p>Política de Privacidade | <a href="franquia.html" class="highlight-link">Seja um Franqueado</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
