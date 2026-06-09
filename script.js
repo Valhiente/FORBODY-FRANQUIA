@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ----------------------------------------------
-    // 2. FUNCIONALIDADE DE ENVIO (FORMSPREE)
+    // 2. FUNCIONALIDADE DE ENVIO (RESEND)
     // ----------------------------------------------
     const form = document.getElementById('franquia-form');
     const formMessage = document.getElementById('form-message');
@@ -77,9 +77,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const nomeInput = document.getElementById('nome'); 
     const emailInput = document.getElementById('email');
     const telefoneInput = document.getElementById('telefone');
-    const investimentoSelect = document.getElementById('capital-investimento'); //
+    const cidadeInput = document.getElementById('cidade');
+    const investimentoSelect = document.getElementById('capital-investimento');
+    const mensagemInput = document.getElementById('mensagem');
 
     if (form) {
+        // Remove o action antigo do Formspree para impedir fallback acidental.
+        form.removeAttribute('action');
+        form.setAttribute('method', 'POST');
+
         form.addEventListener('submit', async function(e) {
             e.preventDefault(); 
             
@@ -107,34 +113,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Preparação para envio
-            const nome = nomeInput.value;
-            const formAction = form.action; 
-            const formData = new FormData(form);
+            // Preparação para envio via endpoint protegido.
+            const nome = nomeInput.value.trim();
+            const payload = {
+                nome,
+                email: emailInput.value.trim(),
+                telefone: telefoneInput.value.trim(),
+                cidade: cidadeInput.value.trim(),
+                capital: investimentoSelect.value,
+                mensagem: mensagemInput.value.trim(),
+                origem: 'FORBODY-FRANQUIA / index.html'
+            };
 
             formMessage.classList.remove('success', 'error', 'hidden');
             formMessage.innerHTML = 'Enviando...'; 
 
             try {
-                const response = await fetch(formAction, {
+                const response = await fetch('/api/send-lead', {
                     method: 'POST',
-                    body: formData,
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify(payload)
                 });
 
-                if (response.ok) {
+                const data = await response.json().catch(() => ({}));
+
+                if (response.ok && data.success) {
                     showFormMessage('success', `Obrigado, ${nome}! Proposta enviada com sucesso.`);
                     form.reset();
                 } else {
-                    // Trata erros específicos da API Formspree ou outros
-                    const data = await response.json();
-                    if (data.errors) {
-                        showFormMessage('error', 'Erro nos dados. Verifique e tente novamente.');
-                    } else {
-                        throw new Error('Erro desconhecido.');
-                    }
+                    showFormMessage('error', data.message || 'Erro ao enviar. Verifique os dados e tente novamente.');
                 }
             } catch (error) {
                 showFormMessage('error', `Erro de conexão. Tente novamente.`);
